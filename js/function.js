@@ -1,7 +1,8 @@
-// Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 – если числа равны.
 
 (function(){
    'use strict';
+
+   // Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 – если числа равны.
     
    let numbers = {
        oneNum: {
@@ -69,11 +70,12 @@ function factorial(num) {
         num = prompt('Введите числo, факториал которого вы хотите посчитать');
     }
     return (num != 1) ? num * factorial(num - 1) : 1;
-  }
+  };
   
   alert(`Факториал выбранного вами числа равняется ${factorial(num)}`);
+
  
-})();
+
 
 
 // 3.Написать функцию, которая принимает три отдельные цифры и превращает их в одно число. 
@@ -139,8 +141,58 @@ function calculateTheAreaOfARectangle(){
 
 calculateTheAreaOfARectangle();
 
-// 5. Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными.
+// 5. Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными
 
+    
+    function perfectNumbers(a, b) {
+        
+        let oneN = prompt('Введите начало диапазона', '');
+        let twoN = prompt('Введите конец диапазона', ''); 
+
+        let perfectNumArr = [];
+        let numArr = [];
+        let num = 0;
+       
+        
+        for (let n = oneN; n <= twoN; n++) {
+            for (let i = 1; i < n; i++) {
+                if (n % i == 0) {
+                    numArr.push(i);
+                }
+            }
+
+
+            for (let i = 0; i < numArr.length; ++i) {
+                num += numArr[i]
+            }
+
+
+        if (num == n) {
+            perfectNumArr.push(n);
+            } else { 
+                numArr.length = 0; num = 0;
+            }
+        
+        }
+
+        for (let i = 0; i < perfectNumArr.length; i++) {
+            document.write(`${perfectNumArr[i]},`)
+        }
+
+        console.log(numArr);
+        console.log(num);
+        console.log(perfectNumArr);
+    }
+
+    perfectNumbers();
+    
+ 
+})();
+
+
+
+
+  
 
 
 
